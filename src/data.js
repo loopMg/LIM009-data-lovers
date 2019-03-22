@@ -1,10 +1,9 @@
-/* Manejo de data */
+const dataPokemon = POKEMON.pokemon;
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+// console.log(dataPokemon);
 
-const example = () => {
-  return 'example';
-};
+/* Bucle p/recorrer todo el array de POKEMON */  
 
-window.example = example;
+ for (let i=0; i<dataPokemon.length; i++) {
+   console.log(dataPokemon[i])
+  }
