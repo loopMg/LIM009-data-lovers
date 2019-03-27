@@ -1,9 +1,8 @@
 /* Manejo del DOM */
 
-
-  const root = document.getElementById('root'); 
-
-  const addPokemon = (pokemones) => {
+/* imprimir data en pantalla*/
+const addPokemon = (pokemones,ruta) => {
+  const root = document.getElementById(ruta);
     for (let i = 0; i < pokemones.length; i++) {
       root.innerHTML += `
         <div> 
@@ -17,7 +16,7 @@
       </div>
     `; 
   }
-}
-
-addPokemon(dataPokemon);
-
+  }
+  // addPokemon(sortedPokemons(dataPokemon),'root')
+  addPokemon(arrImp,'root');
+  // addPokemon(dataPokemon,'root');
