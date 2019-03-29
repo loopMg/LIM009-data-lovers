@@ -12,12 +12,22 @@ const dataPokemon = POKEMON.pokemon;
   //}
 //   console.log(arrPokemons);
 
- /*filtrar data por parametro*/
+/*filtrar data por nombre*/
+// const searchPokemons = (arrData, string) => {
+//   return arrData.filter(object=> object.name.includes(string));
+// }
+
+// const arrFilterPokemons = filteredPokemons(dataPokemon ,'Electric');
+// console.log(arrFilterPokemons);
+
+
+ /*filtrar data por parametro tipo*/
   const filteredPokemons = (arrData, string) => {
     return arrData.filter(object=> object.type.includes(string));
   }
 
-  const arrFilterPokemons = filteredPokemons(dataPokemon ,'Fire');
+  window.filteredPokemons = filteredPokemons;
+  // const arrFilterPokemons = filteredPokemons(dataPokemon , "");
   // console.log(arrFilterPokemons);
 
 /*ordenar data de forma ascendente*/
