@@ -21,6 +21,7 @@ const printPokemons = (arrData, contenedorHTML) => {
 /* array de tipos de pokemons */
  const arrTypesPokemons = ['Grass','Poison','Fire','Flying','Water','Ground','Rock','Electric','Psychic','Normal','Ice','Ghost','Fighting','Bug','Dragon']; 
 
+ 
 /* pintar los botones de tipos de Pokemon */
 const containerButtomsType = document.getElementById("buttoms-types");
 
@@ -50,17 +51,23 @@ boxLine.innerHTML = string;
 });
 
 
+/* pintar pokemon buscado por nombre */
 
+const buttomSearch = document.getElementById("buttom-search")
+let pokeResultSearch ="";
 
-
-
-
-
-
-
-
-
-
-
-
+buttomSearch.addEventListener('click', () => {
+  const stringPokeName = document.getElementById('poke-name').value;
+   pokeResultSearch = window.searchPokemons(dataPokemon,stringPokeName);
+   console.log(pokeResultSearch);
+    let stringSearch = '';
+      for(let i = 0; i<pokeResultSearch.length; i++) {
+        stringSearch += `<div id="poke-box">
+        <img src="${pokeResultSearch[i].img}" alt="pokemon" class="img-poke"/>
+        <p>${pokeResultSearch[i].name}</p>
+        <p>${pokeResultSearch[i].type}</p> </div>
+       `
+      }
+boxLine.innerHTML = stringSearch;
+})
 
