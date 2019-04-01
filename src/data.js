@@ -1,7 +1,6 @@
-/* Const para acceder al array de objetos con todos los pokemones */
-const dataPokemon = POKEMON.pokemon; 
+/* Funciones*/
 
-/*filtrar data por nombre*/
+/*Filtrar data por nombre*/
 
 const searchPokemons = (arrData, string) => {
   return arrData.filter(object=> object.name === string);
@@ -16,23 +15,38 @@ const filteredPokemons = (arrData, string) => {
 
 window.filteredPokemons = filteredPokemons;
 
+
 /* ordenar data de forma ascendente */
 
-// const sortedPokemons =(data)=>{
-//   let var1=data.sort(function(a,b){
-//     if(a.name > b.name) {
-//       return 1;
-//     } else {
-//       return -1;
-//    }
-//   });
-//  return var1;
-// } ;
+const sortedPoke = (arrData, sortOrder) => {
+  let pokesOrder = arrData.sort((a,b)=> {
+    if(a.name > b.name) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+  if (sortOrder === 'Az') {
+    return pokesOrder;
+  }
+  if (sortOrder === 'Za') {
+    return pokesOrder.reverse();
+  }
+};
 
-// const arrSortPokemons = sortedPokemons(dataPokemon);
-// console.log(sortedPokemons(dataPokemon));
+window.sortedPoke = sortedPoke;
 
+/* calculo aritmetico */
 
+const countingPoke = (arrData, inputUser) => {
+    let pokeCoun = 0;
+    let result = 0;
+      for(let i=1; i<arrData.length;i++) {
+        pokeCoun = arrData[i].id;
+        result = pokeCoun - inputUser;
+      } 
+    return result; 
+  }
 
+window.countingPoke = countingPoke;
 
- 

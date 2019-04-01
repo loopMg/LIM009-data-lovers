@@ -8,12 +8,28 @@
   <body>
     <main> <!-- contenedor -->
       <header class="header">Header</header>
-      <div class="search">
+      <nav class="search">
         <input type="text" id="poke-name">
         <buttom type="buttom" id="buttom-search">Buscar</buttom>
-      </div>
+      </nav>
       <aside class="menu">
         <div id="buttoms-types"></div>
+        <div>
+          <ul class="nav">
+            <li><a class="">Ordenar</a>
+              <ul>
+                <li><a id="buttom-upward" value="Az">Ascendente</a></li>
+                <li><a id="buttom-falling" value="Za">Descendente</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p>¿Cuantos de estos pokemons haz capturado?</p>
+          <input type="text" id="numbers-poke">
+          <button type="button" id="buttom-result">Enviar</button>
+          <h1 id="num-result"></h1>
+        </div>
       </aside>
       <section class="content" id="pokemons-view"></section>
       <footer class="footer">Footer</footer>
@@ -24,5 +40,3 @@
   </body>
 </html>
 
-        <!-- <a id="btm-water">Tipo Agua</a> -->
-    <!-- <div id="pokemons-view"></div>  -->

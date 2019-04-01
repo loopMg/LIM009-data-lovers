@@ -1,5 +1,8 @@
 /* Manejo del DOM */
 
+/* Const para acceder al array de objetos con todos los pokemones */
+const dataPokemon = POKEMON.pokemon; 
+
 /* container donde se van a pintar los pokemons  */
 const boxLine = document.getElementById("pokemons-view");
 
@@ -17,6 +20,7 @@ const printPokemons = (arrData, contenedorHTML) => {
   }
   printPokemons(dataPokemon, boxLine)
   // printPokemons(arrSortPokemons,boxLine);
+  // console.log(sortedPokemons(dataPokemon));
 
 /* array de tipos de pokemons */
  const arrTypesPokemons = ['Grass','Poison','Fire','Flying','Water','Ground','Rock','Electric','Psychic','Normal','Ice','Ghost','Fighting','Bug','Dragon']; 
@@ -71,3 +75,47 @@ buttomSearch.addEventListener('click', () => {
 boxLine.innerHTML = stringSearch;
 })
 
+/* pintar pokemons ordenados de forma Ascendente o Descendente */
+
+const buttomSortUp = document.getElementById("buttom-upward");
+const buttomSortFall = document.getElementById("buttom-falling");
+
+let pokeResultSort = '';
+
+buttomSortUp.addEventListener('click', () => {
+  pokeResultSort = window.sortedPoke(dataPokemon, 'Az');
+    let stringSort = '';
+    for(let i = 0; i<pokeResultSort.length; i++) {
+      stringSort += `<div id="poke-box">
+      <img src="${pokeResultSort[i].img}" alt="pokemon" class="img-poke"/>
+      <p>${pokeResultSort[i].name}</p>
+      <p>${pokeResultSort[i].type}</p> </div>
+     `
+    }
+boxLine.innerHTML = stringSort;
+})
+
+buttomSortFall.addEventListener('click', () => {
+  pokeResultSort = window.sortedPoke(dataPokemon, 'Za');
+    let stringSort = '';
+    for(let i = 0; i<pokeResultSort.length; i++) {
+      stringSort += `<div id="poke-box">
+      <img src="${pokeResultSort[i].img}" alt="pokemon" class="img-poke"/>
+      <p>${pokeResultSort[i].name}</p>
+      <p>${pokeResultSort[i].type}</p> </div>
+     `
+    }
+boxLine.innerHTML = stringSort;
+})
+
+
+/* pintar calculo aritmetico */
+const buttomResult = document.getElementById('buttom-result');
+const containerResult = document.getElementById('num-result');
+
+buttomResult.addEventListener('click', ()=>{
+  const userNum = document.getElementById('numbers-poke').value;
+  const parsear = parseInt(userNum);
+  let result = countingPoke(dataPokemon,parsear);
+  containerResult.innerHTML = `<p> Solo te faltan ${result}</p>`
+})
