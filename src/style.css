@@ -1,6 +1,4 @@
-
 main {
-    /* background-color: antiquewhite; */
     display: grid;
     height: 100vh;
     grid-gap: 5px;
@@ -11,15 +9,103 @@ main {
 }
 .header {
     grid-area: head; 
-    background: #50A7E7;
     height: 70px;
-    
+    background: rgba(104,184,243,1);
+    background: -moz-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(104,184,243,1)), color-stop(41%, rgba(104,184,243,1)), color-stop(41%, rgba(80,167,231,1)), color-stop(71%, rgba(80,167,231,1)), color-stop(100%, rgba(80,167,231,1)));
+    background: -webkit-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+    background: -o-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+    background: -ms-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+    background: linear-gradient(to bottom, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#68b8f3', endColorstr='#50a7e7', GradientType=0 );
 }
+
+.header img{
+    padding-left: 5%;
+}
+
 .menu {
     grid-area: menu; 
     background: #D64545;
     height: 650px;
     width: 200px;
+}
+
+ul, ol {
+    list-style:none;
+}
+.nav-sort {
+    width:90%; /*Le establecemos un ancho*/
+    margin:auto; /*Centramos automaticamente*/
+    padding: 0;
+    
+}
+
+.nav-sort li a {
+    background-color:#BA3131;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 12px;
+    display:block;
+    text-align: center;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+.nav-sort li a:hover {
+    background-color:rgb(233, 221, 221);
+}
+
+.nav-sort li ul {
+    display:none;
+    /* position:absolute; */
+    width:150px;
+}
+
+.nav-sort li:hover > ul {
+    display:block;
+}
+
+
+.nav-filter {
+    width:90%; /*Le establecemos un ancho*/
+    margin:auto; /*Centramos automaticamente*/
+    padding: 5%;
+    background-color: yellow;
+}
+
+.nav-filter li a {
+    background-color:#BA3131;
+    color:#fff;
+    text-decoration:none;
+    padding:10px 10px;
+    display:block;
+    text-align: center;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 18px;
+}
+#buttons-types {
+    padding-left: 5%;
+    margin-top: 3%;  
+}
+#buttoms-types li {
+    background: yellow;
+    width:100%;
+    padding: 3%;
+
+}
+
+#button {
+    width: 30%;
+    padding: 5px 5px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 10px;
+    margin-bottom: 2%;
+    border-radius: 15px;
+
 }
 .content {
     grid-area: contenido; 
@@ -32,7 +118,7 @@ main {
 }
 
 #poke-box {
-    background-color: white;
+    background-color: rgb(195, 223, 73);
     height: 150px;
     width: 150px;
     display: inline-block;
@@ -50,6 +136,23 @@ main {
     background:#282828;
     height: 50px;
 }
+
+.counting {
+    background: #434343;
+    height: 30%;
+    text-align: center;
+}
+.counting p {
+    font-family: monospace;
+}
+
+.counting input {
+    width: 15%;
+    text-align: center;
+    font-family: monospace;
+}
+
+
 
 /* #pokemons-view {
     float: center;

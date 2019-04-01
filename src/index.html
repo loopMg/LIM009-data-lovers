@@ -7,24 +7,31 @@
   </head>
   <body>
     <main> <!-- contenedor -->
-      <header class="header">Header</header>
+      <header class="header">
+        <img src="Img/logo-pokemon.png" alt="Logo Pokemon">
+      </header>
       <nav class="search">
         <input type="text" id="poke-name">
         <buttom type="buttom" id="buttom-search">Buscar</buttom>
       </nav>
       <aside class="menu">
-        <div id="buttoms-types"></div>
         <div>
-          <ul class="nav">
-            <li><a class="">Ordenar</a>
-              <ul>
-                <li><a id="buttom-upward" value="Az">Ascendente</a></li>
-                <li><a id="buttom-falling" value="Za">Descendente</a></li>
-              </ul>
+          <ul class="nav-filter">
+            <li><a>Tipos de Pokemons</a>
+              <div id="buttons-types">
+              </div>
             </li>
           </ul>
         </div>
         <div>
+          <ul class="nav-sort">
+            <li><a>Ordenar</a>
+                <li><a id="buttom-upward" value="Az">Ascendente</a></li>
+                <li><a id="buttom-falling" value="Za">Descendente</a></li>
+            </li>
+          </ul>
+        </div>
+        <div class="counting">
           <p>¿Cuantos de estos pokemons haz capturado?</p>
           <input type="text" id="numbers-poke">
           <button type="button" id="buttom-result">Enviar</button>
@@ -32,7 +39,7 @@
         </div>
       </aside>
       <section class="content" id="pokemons-view"></section>
-      <footer class="footer">Footer</footer>
+      <footer class="footer">©Copyright 2019 by Maga and Deysi. All rights reversed.</footer>
     </main>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>

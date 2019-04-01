@@ -19,24 +19,21 @@ const printPokemons = (arrData, contenedorHTML) => {
   contenedorHTML.innerHTML = string; 
   }
   printPokemons(dataPokemon, boxLine)
-  // printPokemons(arrSortPokemons,boxLine);
-  // console.log(sortedPokemons(dataPokemon));
 
-/* array de tipos de pokemons */
+  /* array de tipos de pokemons */
  const arrTypesPokemons = ['Grass','Poison','Fire','Flying','Water','Ground','Rock','Electric','Psychic','Normal','Ice','Ghost','Fighting','Bug','Dragon']; 
 
  
 /* pintar los botones de tipos de Pokemon */
-const containerButtomsType = document.getElementById("buttoms-types");
+const containerButtomsType = document.getElementById("buttons-types");
 
 let stringButtoms = '';
   for(let i=0;i<arrTypesPokemons.length; i++) {
-    stringButtoms +=`
-        <input type="checkbox" name="type" id=${arrTypesPokemons[i]} value=${arrTypesPokemons[i]}>
-        <label for="checkbox">${arrTypesPokemons[i]}</label>
-        <br>
+    stringButtoms +=`<button type="button" name="type" id="button" value=${arrTypesPokemons[i]}>
+    ${arrTypesPokemons[i]}</button>
     `
   }
+
 containerButtomsType.innerHTML = stringButtoms;
 
 /* pintar pokemons filtrados  segun el tipo seleccionado */
