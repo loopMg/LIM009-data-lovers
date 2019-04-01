@@ -10,21 +10,21 @@ Jugadores novatos que requieran visualizar informacion basica sobre los pokemos 
 
 ## Beneficios de usar PokeMag
 
-+Podrán conocer cuales son los pokemons a entrenar para enfrentar a sus rivales previo reconocimiento de las debilidades de los pokemons oponentes.
++ Podrán conocer cuales son los pokemons a entrenar para enfrentar a sus rivales previo reconocimiento de las debilidades de los pokemons oponentes.
 
-+Podrán visualizar a los pokemons y su informacion antes de encontrarlos en el juego.
++ Podrán visualizar a los pokemons y su informacion antes de encontrarlos en el juego.
 
-+Funcionamiento simple: con pocos clicks obtendra la informacion deseada.
++ Funcionamiento simple: con pocos clicks obtendra la informacion deseada.
 
 ## Una justa solucion 
 
-+Plaforma lifesaver que brinda conocimiento para tener una mejor experiencia de juego.
++ Plaforma lifesaver que brinda conocimiento para tener una mejor experiencia de juego.
 
-## Investigacion de Usuario
+# Investigacion de Usuario
 
-# User Persona 
+## User Persona 
 
-# Historias de Usuario
+## Historias de Usuario
 
 Primera Historia 
     : Yo como usuario quiero poder visualizar imágenes, nombres y tipos de todos los Pokemons de la región Kanto.
@@ -41,28 +41,28 @@ Cuarta Historia
 Quinta Historia 
     : Yo como usuario quiero saber cuantos pokemons me faltan capturar para completar toda la pokedex de la región Kanto.
 
-# Post-its Notes (Tablero Canvas) 
+## Post-its Notes (Tablero Canvas) 
 
 ![USERSTORIES](README/userstoriesCanvas.jpeg)
 
 ## Proceso de Diseño
 
-# FlowChart
+## FlowChart
 
 Control de flujo de plataforma PokeMag
 
 ![FLOWCHART](README/flowchart.jpeg)
 
-# Definicion de terminado 
+## Definicion de terminado 
 
 La pantalla muestra header con logo, footer (copyright),menú con botones de tipos y botones para ordenar(ascendente y descendente) e input para realizar calculo matematico, en el section container se muestran las imagenes, nombres, y tipos seleccionado de pokemons. La pantalla posee los colores, tipografía, es responsive. 
 
-# Prototipos de pantallas (Baja y Alta fidelidad)
+## Prototipos de pantallas (Baja y Alta fidelidad)
 
 ![BAJAFIDELIDAD](README/bf3userstories.jpeg)
 ![ALTAFIDELIDAD](README/Fullstories.PNG)
 
-# Ejemplos de codigo 
+## Ejemplos de codigo 
 
 Creamos funciones que permiten al usuario buscar, filtrar, ordenar la data de los pokemos e incluso hacer un calculo matematico.
 
