@@ -22,6 +22,18 @@ Jugadores novatos que requieran visualizar informacion basica sobre los pokemos 
 
 # Investigacion de Usuario
 
+Realizamos una encuesta a 10 personas con las siguientes preguntas:
+
+![ENCUESTA](README/Encuesta.PNG)
+
+Los resultados de la encuesta son los siguientes:
+
+![RESULTENCUESTA](README/resultado1.PNG)
+![RESULTENCUESTA](README/resultado2.PNG)
+![RESULTENCUESTA](README/resultado3.PNG)
+
+Apartir de estos resultados definimos nuestras historias de usuario.
+
 ## User Persona 
 
 ## Historias de Usuario
@@ -45,7 +57,7 @@ Quinta Historia
 
 ![USERSTORIES](README/userstoriesCanvas.jpeg)
 
-## Proceso de Diseño
+# Proceso de Diseño
 
 ## FlowChart
 
@@ -74,3 +86,4 @@ VanillaJS 🍦
 
 ## Autorxs ✒️
 
+Deysi & Maga.
