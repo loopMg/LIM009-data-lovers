@@ -45,7 +45,7 @@ Quinta Historia
 
 ![USERSTORIES](README/userstoriesCanvas.jpeg)
 
-## Proceso de Diseño
+# Proceso de Diseño
 
 ## FlowChart
 
@@ -73,4 +73,6 @@ Creamos funciones que permiten al usuario buscar, filtrar, ordenar la data de lo
 VanillaJS 🍦
 
 ## Autorxs ✒️
+
+Deysi & Maga.
 
