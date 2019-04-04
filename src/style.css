@@ -102,6 +102,7 @@ ul, ol {
     font-weight: bold;
 }
 
+
 #buttons-types {
     padding-top: 2%;
 }
@@ -313,9 +314,6 @@ ul, ol {
         width: 70%;
         margin: auto;
         margin-bottom: 1.5%;
-    }
-    .nav-filter li a:hover {
-        background-color: grey;
     }
     
     #buttons-types {
