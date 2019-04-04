@@ -120,3 +120,5 @@ buttomResult.addEventListener('click', ()=>{
   let result = countingPoke(dataPokemon,parsear);
   containerResult.innerHTML = `<p class="counting-result"> ¡Solo te faltan ${result}!</p>`
 })
+
+
