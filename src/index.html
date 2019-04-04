@@ -2,45 +2,52 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <title>Pokemon Mag</title>
   </head>
   <body>
-    <main> <!-- contenedor -->
-      <header class="header">
-        <img src="Img/logo-pokemon.png" alt="Logo Pokemon">
-      </header>
-      <nav class="search">
-        <input type="text" id="poke-name">
-        <buttom type="buttom" id="buttom-search">Buscar</buttom>
-      </nav>
-      <aside class="menu">
+    <header class="header-poke">
+      <figure class="section-logo"><img class="logotipo" src="Img/iconPokeMag1.png" alt="Logo-poke"></figure>
+    </header>
+    <nav>
+        <div class="search">
+          <input type="text" class="input-search" id="poke-name" placeholder="Busca tu Pokemon favorito">
+          <button class="send" id="buttom-search">Buscar</button>
+        </div>
+    </nav>
+    <main class="general-container"> <!-- contenedor -->
+      <aside class="menu" id="menu" class="menu-options hide">
         <div>
           <ul class="nav-filter">
-            <li><a>Tipos de Pokemons</a>
-              <div id="buttons-types">
-              </div>
+            <li>
+              <a class="boton" id="print-btn-type">Tipos</a>
+              <div id="buttons-types"></div>
             </li>
           </ul>
         </div>
         <div>
           <ul class="nav-sort">
             <li><a>Ordenar</a>
-                <li><a id="buttom-upward" value="Az">Ascendente</a></li>
-                <li><a id="buttom-falling" value="Za">Descendente</a></li>
-            </li>
+              <ul>
+                <li><a class="boton" id="buttom-upward" value="Az">Ascendente</a></li>
+                <li><a class="boton" id="buttom-falling" value="Za">Descendente</a></li>
+              </ul>
+              </li>
           </ul>
         </div>
         <div class="counting">
           <p>¿Cuantos de estos pokemons haz capturado?</p>
-          <input type="text" id="numbers-poke">
-          <button type="button" id="buttom-result">Enviar</button>
+          <input type="text" id="numbers-poke" placeholder="Nro">
+          <button type="button" class="send" id="buttom-result">Enviar</button>
           <h1 id="num-result"></h1>
         </div>
       </aside>
-      <section class="content" id="pokemons-view"></section>
-      <footer class="footer">©Copyright 2019 by Maga and Deysi. All rights reversed.</footer>
+      <section class="content">
+        <div id="pokemons-view"></div>
+      </section>
     </main>
+    <footer class="footer">© Copyright 2019 by Deysi & Maga. <br> All rights reversed.</footer>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>

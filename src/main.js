@@ -10,9 +10,9 @@ const boxLine = document.getElementById("pokemons-view");
 const printPokemons = (arrData, contenedorHTML) => {
   let string = '';
   for(let i = 0; i<arrData.length; i++) {
-    string += `<div id="poke-box">
+    string += `<div class="poke-box">
                     <img src="${arrData[i].img}" alt="pokemon" class="img-poke"/>
-                    <p>${arrData[i].name}</p>
+                    <h1>${arrData[i].name}</h1>
                     <p>${arrData[i].type}</p> </div>
    `
   }
@@ -25,16 +25,20 @@ const printPokemons = (arrData, contenedorHTML) => {
 
  
 /* pintar los botones de tipos de Pokemon */
+const btnPrintBtnsType = document.getElementById('print-btn-type');
 const containerButtomsType = document.getElementById("buttons-types");
 
-let stringButtoms = '';
+btnPrintBtnsType.addEventListener('click', () =>{
+  let stringButtoms = '';
   for(let i=0;i<arrTypesPokemons.length; i++) {
-    stringButtoms +=`<button type="button" name="type" id="button" value=${arrTypesPokemons[i]}>
+    stringButtoms +=`<button type="button" name="type" class="button" value=${arrTypesPokemons[i]}>
     ${arrTypesPokemons[i]}</button>
     `
   }
 
 containerButtomsType.innerHTML = stringButtoms;
+})
+
 
 /* pintar pokemons filtrados  segun el tipo seleccionado */
 newArrFilter = "";
@@ -42,7 +46,7 @@ containerButtomsType.addEventListener('click', (e) => {
   newArrFilter = window.filteredPokemons(dataPokemon,e.target.value);
       let string = '';
         for(let i = 0; i<newArrFilter.length; i++) {
-          string += `<div id="poke-box">
+          string += `<div class="poke-box">
                       <img src="${newArrFilter[i].img}" alt="pokemon" class="img-poke"/>
                       <p>${newArrFilter[i].name}</p>
                       <p>${newArrFilter[i].type}</p> </div>
@@ -63,7 +67,7 @@ buttomSearch.addEventListener('click', () => {
    console.log(pokeResultSearch);
     let stringSearch = '';
       for(let i = 0; i<pokeResultSearch.length; i++) {
-        stringSearch += `<div id="poke-box">
+        stringSearch += `<div class="poke-box">
         <img src="${pokeResultSearch[i].img}" alt="pokemon" class="img-poke"/>
         <p>${pokeResultSearch[i].name}</p>
         <p>${pokeResultSearch[i].type}</p> </div>
@@ -83,7 +87,7 @@ buttomSortUp.addEventListener('click', () => {
   pokeResultSort = window.sortedPoke(dataPokemon, 'Az');
     let stringSort = '';
     for(let i = 0; i<pokeResultSort.length; i++) {
-      stringSort += `<div id="poke-box">
+      stringSort += `<div class="poke-box">
       <img src="${pokeResultSort[i].img}" alt="pokemon" class="img-poke"/>
       <p>${pokeResultSort[i].name}</p>
       <p>${pokeResultSort[i].type}</p> </div>
@@ -96,7 +100,7 @@ buttomSortFall.addEventListener('click', () => {
   pokeResultSort = window.sortedPoke(dataPokemon, 'Za');
     let stringSort = '';
     for(let i = 0; i<pokeResultSort.length; i++) {
-      stringSort += `<div id="poke-box">
+      stringSort += `<div class="poke-box">
       <img src="${pokeResultSort[i].img}" alt="pokemon" class="img-poke"/>
       <p>${pokeResultSort[i].name}</p>
       <p>${pokeResultSort[i].type}</p> </div>
@@ -114,5 +118,5 @@ buttomResult.addEventListener('click', ()=>{
   const userNum = document.getElementById('numbers-poke').value;
   const parsear = parseInt(userNum);
   let result = countingPoke(dataPokemon,parsear);
-  containerResult.innerHTML = `<p> Solo te faltan ${result}</p>`
+  containerResult.innerHTML = `<p class="counting-result"> ¡Solo te faltan ${result}!</p>`
 })

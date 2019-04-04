@@ -1,15 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden
+}
+
+body {
+    font-family: monospace;
+}
+
 main {
     display: grid;
     height: 100vh;
-    grid-gap: 5px;
-    grid-template-areas:"head head"
-                        "search search"
-                        "menu contenido"
-                        "foot foot";
+    grid-template-columns:20% 80%;                    
 }
-.header {
+
+header {
     grid-area: head; 
-    height: 70px;
     background: rgba(104,184,243,1);
     background: -moz-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(104,184,243,1)), color-stop(41%, rgba(104,184,243,1)), color-stop(41%, rgba(80,167,231,1)), color-stop(71%, rgba(80,167,231,1)), color-stop(100%, rgba(80,167,231,1)));
@@ -20,84 +27,86 @@ main {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#68b8f3', endColorstr='#50a7e7', GradientType=0 );
 }
 
-.header img{
-    padding-left: 5%;
+.logotipo {
+    padding-left: 44%;
 }
 
+/* Seccion para buscar */
+
+nav {
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.search {
+    width: 120%;
+    padding-left: 10%;
+}
+
+.input-search { 
+    border: transparent;
+    width: 70%;
+    text-align: center;
+}
+
+.send { /* Boton buscar y Enviar de las cajas de texto */
+    background: #BA3131;
+    border-bottom: none;
+    padding: 5px 5px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.send:hover {
+    background-color: grey;
+}
+
+/* Seccion de botones para filtrar data  */
+
 .menu {
-    grid-area: menu; 
+    /* grid-area: menu;  */
     background: #D64545;
-    height: 650px;
-    width: 200px;
+    width: 80%;
+    border-radius: 10%;
+    border: salmon solid 5px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    height: 70%;
 }
 
 ul, ol {
     list-style:none;
 }
-.nav-sort {
-    width:90%; /*Le establecemos un ancho*/
-    margin:auto; /*Centramos automaticamente*/
-    padding: 0;
-    
-}
-
-.nav-sort li a {
-    background-color:#BA3131;
-    color:#fff;
-    text-decoration:none;
-    padding:12px 12px;
-    display:block;
-    text-align: center;
-    border-radius: 5px;
-    font-family: monospace;
-    font-size: 18px;
-}
-
-.nav-sort li a:hover {
-    background-color:rgb(233, 221, 221);
-}
-
-.nav-sort li ul {
-    display:none;
-    /* position:absolute; */
-    width:150px;
-}
-
-.nav-sort li:hover > ul {
-    display:block;
-}
-
 
 .nav-filter {
-    width:90%; /*Le establecemos un ancho*/
-    margin:auto; /*Centramos automaticamente*/
+    width:90%;
+    margin:auto; 
     padding: 5%;
-    background-color: yellow;
 }
 
-.nav-filter li a {
+.boton { /* Afecta al boton invocador de tipos Tipos */
     background-color:#BA3131;
     color:#fff;
     text-decoration:none;
-    padding:10px 10px;
+    padding:8px 8px;
     display:block;
     text-align: center;
-    border-radius: 5px;
-    font-family: monospace;
-    font-size: 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 77%;
+    margin: auto;
+    margin-bottom: 1.5%;
+    font-weight: bold;
 }
+
 #buttons-types {
-    padding-left: 5%;
-    margin-top: 3%;  
-}
-#buttoms-types li {
-    background: yellow;
-    width:100%;
-    padding: 3%;
-
+    padding-top: 2%;
 }
 
-#button {
+.button {  /* botones de tipos  */
     width: 30%;
     padding: 5px 5px;
     text-align: center;
@@ -105,66 +114,326 @@ ul, ol {
     font-size: 10px;
     margin-bottom: 2%;
     border-radius: 15px;
+    border-bottom: none;
+    color: white;
+    background-color:#FFD226;
+    font-weight: bold;
+} 
 
+/* Seccion de botones para ordenar data  */
+
+
+.nav-sort {
+    width:90%; 
+    margin:auto; 
+    padding: 0;
 }
+
+.nav-sort li a {
+    background-color:#BA3131;
+    color:#fff;
+    padding:8px 8px;
+    display:block;
+    text-align: center;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 15px;
+    text-decoration:none;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 1.5%;
+    width: 70%;
+}
+
+.nav-sort li .boton:hover {
+    background-color:white;
+    color: #BA3131;
+    width: 80%;
+}
+
+.nav-sort ul {
+    display:none;
+}
+
+.nav-sort li:hover > ul {
+    display:block;
+}
+
+
+/* Seccion del menu para realizar calculo */
+
+.counting {
+    width: 90%;
+    height: 40%;
+    margin: auto;
+    font-weight: bold;    
+    font-size: 120%;
+    text-align: center;
+    border: white ridge 2px;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+.counting p {
+    padding: 5%;
+}
+.counting input {
+    width: 20%;
+    border: none;
+}
+
+.counting-result {
+    color: white;
+}
+
+/* Seccion donde se imprimen los array de pokemons  */
+
 .content {
-    grid-area: contenido; 
-    background: #fff;
-    height: 650px;
-    width: 1300px;
-    overflow: scroll;
     padding-top: 5px;
-    padding-left: 30px;
+    margin: 0;
+    padding: 0;
 }
 
-#poke-box {
-    background-color: rgb(195, 223, 73);
-    height: 150px;
+.poke-box {
+    background-color: whitesmoke;
+    height: 170px;
     width: 150px;
     display: inline-block;
     text-align: center;
-    margin: 25px;
+    margin: 2%;
+    border-radius: 5px;
 }
-
-#poke-box p{
+.poke-box h1  {
+    background-color: grey;
+    color: white;
+}
+.poke-box p{
     background: grey;
     margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+   
 }
 
 .footer {
-    grid-area: foot; 
-    background:#282828;
+    background:black;
+    color: white;
+    text-align: center;
+    font-weight: bold;
     height: 50px;
 }
 
-.counting {
-    background: #434343;
-    height: 30%;
-    text-align: center;
-}
-.counting p {
-    font-family: monospace;
-}
 
-.counting input {
-    width: 15%;
-    text-align: center;
-    font-family: monospace;
-}
+@media screen and (max-width: 750px) {
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } 
 
+    body {
+        font-family: monospace;
+    }
+    
+    .general-container {
+        margin: 0 5%;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 10fr 12fr;
+        height: 100vh;
+        grid-row-gap: 2%;
+    }
+    
+    header {
+        background: rgba(104,184,243,1);
+        background: -moz-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(104,184,243,1)), color-stop(41%, rgba(104,184,243,1)), color-stop(41%, rgba(80,167,231,1)), color-stop(71%, rgba(80,167,231,1)), color-stop(100%, rgba(80,167,231,1)));
+        background: -webkit-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+        background: -o-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+        background: -ms-linear-gradient(top, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+        background: linear-gradient(to bottom, rgba(104,184,243,1) 0%, rgba(104,184,243,1) 41%, rgba(80,167,231,1) 41%, rgba(80,167,231,1) 71%, rgba(80,167,231,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#68b8f3', endColorstr='#50a7e7', GradientType=0 );
+    
+    }
+    
+    .logotipo {
+        padding-left: 33%;
+    }
+    
+    .menu {
+        background: transparent;
+        width: 100%;
+        border: none;
+        margin-left: 0;
+    }
 
-/* #pokemons-view {
-    float: center;
-    background: green;
-    width: 90%;
-    margin-top: 100px;
-    box-sizing: border-box;
-    margin: auto;
-}
-#casilla {
-    background-color: white;
-    height: 150px;
-    width: 150px;
-    display: inline-block;
+    /* Seccion para buscar */
+    
+    nav {
+        padding-top: 2%;
+    }
+    
+    .search {
+        width: 100%}
+    
+    .input-search { 
+        border: transparent;
+    }
+    
+    .send { /* Boton buscar y Enviar de las cajas de texto */
+        background: #BA3131;
+        border-bottom: none;
+        padding: 2%;
+        border-radius: 10px;
+        color: #fff;
+        font-family: monospace;
+    }
+    
+    .send:hover {
+        background-color: grey;
+    }
+    
+    /* Seccion de botones para filtrar data  */
+    
+    .nav-filter {
+        width:75%; 
+        margin:auto; 
+        padding: 5%;
+        list-style: none;
+    }
+    .boton { /* Afecta al boton invocador Tipos */
+        background-color:#BA3131;
+        color:#fff;
+        text-decoration:none;
+        padding:5px 5px;
+        display:block;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 15px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 1.5%;
+    }
+    .nav-filter li a:hover {
+        background-color: grey;
+    }
+    
+    #buttons-types {
+        padding-top: 2%;
+        padding-left: 15%;
+    }
+    
+    .button { /* botones de tipos  */
+        width: 25%;
+        padding: 5px 5px;
+        text-align: center;
+        font-size: 11px;
+        margin-bottom: 2%;
+        border-radius: 15px;
+        border-bottom: none;
+        background-color: orange ;
+        color: #fff;
+        font-family: monospace;
+    }
+    
+    /* Seccion de botones para ordenar data  */
+    
+    .nav-sort li {
+        list-style: none;
+    }
+    
+    .nav-sort li a { 
+        background-color:#BA3131;
+        color:#fff;
+        text-decoration:none;
+        padding:5px 5px;
+        display:block;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 15px;
+        width: 50%;
+        margin: auto;
+        margin-bottom: 1.5%;
+    }
+    
+    .nav-sort li .boton:hover {
+        background-color: white;
+        color: #BA3131;
+    }
+    
+    .nav-sort ul {
+        display:none;
+    }
+    
+    .nav-sort li:hover > ul {
+        display:block;
+    }
+    
+    
+    /* Seccion del menu para realizar calculo */
+    
+    .counting {
+        width: 75%;
+        font-weight: bold;    
+        font-size: 120%;
+        position: absolute;
+        border: none;
+        margin-left: 7%;
+        height: 170px;
+
+    }
+    .counting p {
+        padding: 5%;
+    }
+    .counting input {
+        width: 20%;
+        border: none;
+    }
+    .counting-result {
+        color: black;
+    }
+    /* Seccion donde se imprimen los array de pokemons  */
+    
+    .content {
+        overflow: scroll;
+        padding-top: 5px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #pokemons-view {
+        width: 90%;
+        margin: auto;
+        /* padding-left: 2%; */
+        box-sizing: border-box;
+    }
+    .poke-box {
+        background-color: whitesmoke ;
+        height: 180px;
+        width: 100%; 
+        display: inline-block;
+        text-align: center;
+        margin: 2%;
+        font-weight: bold;
+        border-radius: 5%;
+    
+    }
+    
+    .poke-box h1  {
+        background-color: grey;
+        color: white;
+    }
+    
+    .poke-box p {
+        background-color: grey;
+        color: white;
+    }
+    
+    
+    .footer {
+        background: black;
+        color: #fff;
+        text-align: center;
+        font-weight: bolder;
+    }
 }
