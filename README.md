@@ -34,7 +34,11 @@ Los resultados de la encuesta son los siguientes:
 
 Apartir de estos resultados definimos nuestras historias de usuario.
 
-## User Persona 
+## User Persona  
+
+Perfil de nuestro user persona modelo: 
+
+![USERPERSONA](README/UserPersona.PNG)
 
 ## Historias de Usuario
 
