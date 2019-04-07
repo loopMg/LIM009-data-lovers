@@ -3,14 +3,14 @@
 /*Filtrar data por nombre*/
 
 const searchPokemons = (arrData, string) => {
-  return arrData.filter(object=> object.name === string);
+  return arrData.filter(object => object.name === string);
 }
 
 window.searchPokemons = searchPokemons;
 
 /* filtrar data por parametro tipo */
 const filteredPokemons = (arrData, string) => {
-  return arrData.filter(object=> object.type.includes(string));
+  return arrData.filter(object => object.type.includes(string));
 }
 
 window.filteredPokemons = filteredPokemons;
@@ -19,8 +19,8 @@ window.filteredPokemons = filteredPokemons;
 /* ordenar data de forma ascendente */
 
 const sortedPoke = (arrData, sortOrder) => {
-  let pokesOrder = arrData.sort((a,b)=> {
-    if(a.name > b.name) {
+  let pokesOrder = arrData.sort((a, b) => {
+    if (a.name > b.name) {
       return 1;
     } else {
       return -1;
@@ -36,25 +36,22 @@ const sortedPoke = (arrData, sortOrder) => {
 window.sortedPoke = sortedPoke;
 
 
-/* calculo aritmetico */
+/* calculo aritmetico resta */
 
 const countingPoke = (arrData, inputUser) => {
-    let pokeCoun = 0;
-    let result = 0;
-      for(let i=0; i<arrData.length;i++) {
-        pokeCoun = arrData[i].id;
-        if ( inputUser <= 151) {
-        result = pokeCoun - inputUser;
-      } else {
-        result = "Wooh!";
-      }
+  const dataBase = arrData.length;
+  let result = 0;
+    if (inputUser <= 151) {
+      result = dataBase - inputUser;
+    } else {
+      result = "Wooh!";
     }
-    return result; 
-  }
-
-
+  return result;
+}
 
 window.countingPoke = countingPoke;
 
+/* promedio de tipos de pokemons
+*/
 
 

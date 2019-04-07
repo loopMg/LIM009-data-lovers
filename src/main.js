@@ -110,7 +110,7 @@ boxLine.innerHTML = stringSort;
 })
 
 
-/* pintar calculo aritmetico */
+/* pintar calculo aritmetico resta */
 const buttomResult = document.getElementById('buttom-result');
 const containerResult = document.getElementById('num-result');
 
