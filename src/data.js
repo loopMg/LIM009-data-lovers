@@ -13,8 +13,8 @@ window.filteredPokemons = filteredPokemons;
 
 // ordenar data de forma ascendente 
 const sortedPoke = (arrData, sortOrder) => {
-  let pokesOrder = arrData.sort((imp1, imp2) => {
-    if (imp1.name > imp2.name) {
+  let pokesOrder = arrData.concat().sort((aa, bb) => {
+    if (aa.name > bb.name) {
       return 1;
     } else {
       return -1;
@@ -32,7 +32,7 @@ window.sortedPoke = sortedPoke;
 const countingPoke = (arrData, inputUser) => {
   const dataBase = arrData.length;
   let result = 0;
-  if (inputUser <= 151) {
+  if (inputUser <= dataBase) {
     result = dataBase - inputUser;
   } else {
     result = ('Wooh!');

@@ -2,19 +2,16 @@ global.window = global;
 require('../src/data.js');
 // require('./data.spec.js');
 
-const data = {
-  'pokemon': [{
-    'name': 'Blastoise',
-    'type': 'Water'
-  }, {
-    'name': 'Abra',
-    'type': 'Psychic'
-  }, {
-    'name': 'Charmeleon',
-    'type': 'Fire'
-  }]
-};
-const input = data.pokemon;
+const input = [{
+  'name': 'Blastoise',
+  'type': 'Water'
+}, {
+  'name': 'Abra',
+  'type': 'Psychic'
+}, {
+  'name': 'Charmeleon',
+  'type': 'Fire'
+}];
 
 const outputOne = [{
   'name': 'Blastoise',
@@ -23,10 +20,10 @@ const outputOne = [{
 
 describe('searchPokemons', () => {
   it('deberia ser una funcion', () => {
-    expect(typeof window.searchPokemons).toBe('function');
+    expect(typeof global.searchPokemons).toBe('function');
   });
   it('deberia retornar output para output', () => { 
-    expect(window.searchPokemons(input, 'Blastoise')).toEqual(outputOne);
+    expect(global.searchPokemons(input, 'Blastoise')).toEqual(outputOne);
   });
 });
 
@@ -37,10 +34,10 @@ const outputTwo = [{
 
 describe('filteredPokemons', () => {
   it('deberia ser una funcion', () => {
-    expect(typeof window.filteredPokemons).toBe('function');
+    expect(typeof global.filteredPokemons).toBe('function');
   });
   it('deberia retonar pokemon tipo Fuego', () => {
-    expect(window.filteredPokemons(input, 'Fire')).toEqual(outputTwo);
+    expect(global.filteredPokemons(input, 'Fire')).toEqual(outputTwo);
   });
 });
 
@@ -55,17 +52,37 @@ const outputThree = [{
   'type': 'Fire',
 }];
 
+const outputFour = [{
+  'name': 'Charmeleon',
+  'type': 'Fire',
+}, {
+  'name': 'Blastoise',
+  'type': 'Water'
+}, {
+  'name': 'Abra',
+  'type': 'Psychic'
+}];
+
 describe('sortedPoke', () => {
   it('deberia ser una funcion', () => {
-    expect(typeof window.sortedPoke).toBe('function');
+    expect(typeof global.sortedPoke).toBe('function');
   });
-//   it('deberia ordenar data A-Z', () => {
-//     expect(window.sortedPoke(input, 'A')).toEqual(outputThree)
-//   });
-// });
+  it('deberia ordenar data A-Z', () => {
+    expect(global.sortedPoke(input, 'Az')).toEqual(outputThree);
+  });
+  it('deberia ordenar data Z-A', () => {
+    expect(global.sortedPoke(input, 'Za')).toEqual(outputFour);
+  });
+});
 
 describe('countingPoke', () => {
   it('deberia ser una funcion', () => {
-    expect(typeof window.countingPoke).toBe('function');
+    expect(typeof global.countingPoke).toBe('function');
   });
-});  
+  it('deberia restar y retornar 2', () => {
+    expect(global.countingPoke(input, 1)).toEqual(2);
+  });
+  it('deberia retornar string "Wooh!"', () => {
+    expect(global.countingPoke(input, 4)).toEqual('Wooh!');
+  });
+});
